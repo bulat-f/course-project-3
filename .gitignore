@@ -1,0 +1,12 @@
+# sources compiling results
+main
+*.o
+
+# LaTeX compiling results
+*.log
+*.pdf
+*.aux
+
+# vim temporary files
+~*
+*.swp
