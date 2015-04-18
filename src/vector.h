@@ -50,7 +50,7 @@ namespace KFU
 	template <class type>
 	int Vector<type>::size() const
 	{
-		return this->values.size();
+		return values.size();
 	}
 
 	template <class type>
@@ -78,7 +78,7 @@ namespace KFU
 		char separator = (' ');
 		for (int i = 0; i < data.size(); i++)
 			out << data[i] << separator;
-			return out;
+		return out;
 	}
 }
 
