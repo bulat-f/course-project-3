@@ -14,6 +14,9 @@ namespace KFU
 	std::ostream& operator<<(std::ostream&, const Matrix<type>&);
 
 	template <class type>
+	std::istream& operator>>(std::istream&, Matrix<type>&);
+
+	template <class type>
 	class Matrix
 	{
 		public:
@@ -25,10 +28,11 @@ namespace KFU
 		private:
 			std::vector<std::vector<type>> values;
 			friend std::ostream& operator<<<type>(std::ostream&, const Matrix&);
+			friend std::istream& operator>><type>(std::istream&, Matrix&);
 	};
 
 	template <class type>
-	Matrix<type>::Matrix()
+	Matrix<type>::Matrix(): values()
 	{
 	}
 
@@ -70,6 +74,21 @@ namespace KFU
 			out << std::endl;
 		}
 		return out;
+	}
+
+	template <class type>
+	std::istream& operator>>(std::istream& in, Matrix<type>& data)
+	{
+		int rows, columns;
+		in >> rows >> columns;
+		data.values.resize(rows);
+		for (int i = 0; i < rows; i++)
+		{
+			data.values[i].resize(columns);
+			for (int j = 0; j < columns; j++)
+				in >> data.values[i][j];
+		}
+		return in;
 	}
 }
 
