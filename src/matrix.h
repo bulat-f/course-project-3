@@ -25,6 +25,10 @@ namespace KFU
 			Matrix(const Matrix &);
 			int rows() const;
 			int columns() const;
+
+			type getElem(int, int) const;
+
+			Matrix& operator=(const Matrix&);
 		private:
 			std::vector<std::vector<type>> values;
 			friend std::ostream& operator<<<type>(std::ostream&, const Matrix&);
@@ -65,6 +69,12 @@ namespace KFU
 	}
 
 	template <class type>
+	type Matrix<type>::getElem(int i, int j) const
+	{
+		return values[i][j];
+	}
+
+	template <class type>
 	std::ostream& operator<<(std::ostream& out, const Matrix<type>& data)
 	{
 		for (int i = 0; i < data.rows(); i++)
@@ -74,6 +84,13 @@ namespace KFU
 			out << std::endl;
 		}
 		return out;
+	}
+
+	template <class type>
+	Matrix<type>& Matrix<type>::operator=(const Matrix& other)
+	{
+		values = other.values;
+		return *this;
 	}
 
 	template <class type>
