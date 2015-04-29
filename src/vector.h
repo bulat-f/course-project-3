@@ -26,10 +26,13 @@ namespace KFU
 	class Vector {
 		public:
 			Vector();
+			Vector(int);
 			Vector(type *, int, Orientation);
 			Vector(const Vector&);
 
 			int size() const;
+
+			void resize(int);
 
 			type operator[](int) const;
 			type& operator[](int);
@@ -48,6 +51,11 @@ namespace KFU
 	}
 
 	template <class type>
+	Vector<type>::Vector(int size): values(size), orient(Orientation::horizontal)
+	{
+	}
+
+	template <class type>
 	Vector<type>::Vector(type *array, int size, Orientation o = Orientation::horizontal): values(array, array + size), orient(o)
 	{
 	}
@@ -61,6 +69,12 @@ namespace KFU
 	int Vector<type>::size() const
 	{
 		return values.size();
+	}
+
+	template <class type>
+	void Vector<type>::resize(int size)
+	{
+		values.resize(size);
 	}
 
 	template <class type>
@@ -94,9 +108,6 @@ namespace KFU
 	template <class type>
 	std::istream& operator>>(std::istream& in, Vector<type>& data)
 	{
-		int size;
-		in >> size;
-		data.values.resize(size);
 		for (int i = 0; i < data.size(); i++)
 			in >> data[i];
 		return in;

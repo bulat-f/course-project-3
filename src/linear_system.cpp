@@ -6,10 +6,26 @@ namespace KFU
 	{
 	}
 
-	LinearSystem::LinearSystem(const Matrix<double>& matrix_, const Vector<double>& vector_)
+	LinearSystem::LinearSystem(const int n, const int m)
 	{
-		m = matrix_;
-		v = vector_;
+		matrix_.resize(n, m);
+		vector_.resize(n);
+	}
+
+	LinearSystem::LinearSystem(const Matrix<double>& m, const Vector<double>& v)
+	{
+		matrix_ = m;
+		vector_ = v;
+	}
+
+	int LinearSystem::equations() const
+	{
+		return vector_.size();
+	}
+
+	int LinearSystem::variables() const
+	{
+		return matrix_.columns();
 	}
 
 	Vector<double> LinearSystem::solve()
@@ -20,16 +36,22 @@ namespace KFU
 
 	std::ostream& operator<<(std::ostream& out, LinearSystem& sys)
 	{
-		for (int i = 0; i < sys.v.size(); i++)
+		for (int i = 0; i < sys.equations(); i++)
 		{
 			out << "| ";
-			for (int j = 0; j < sys.m.columns(); j++)
+			for (int j = 0; j < sys.variables(); j++)
 			{
-				out << sys.m.getElem(i, j) << ' ';
+				out << sys.matrix_.getElem(i, j) << ' ';
 			}
 			out << " | ";
-			out << sys.v[i] << std::endl;
+			out << sys.vector_[i] << std::endl;
 		}
 		return out;
+	}
+
+	std::istream& operator>>(std::istream& in, LinearSystem& sys)
+	{
+		in >> sys.matrix_ >> sys.vector_;
+		return in;
 	}
 }

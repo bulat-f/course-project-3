@@ -11,13 +11,18 @@ namespace KFU
 	{
 		public:
 			LinearSystem();
+			LinearSystem(const int, const int);
 			LinearSystem(const Matrix<double>&, const Vector<double>&);
+
+			int equations() const;
+			int variables() const;
 
 			Vector<double> solve();
 		private:
-			Vector<double> v;
-			Matrix<double> m;
+			Vector<double> vector_;
+			Matrix<double> matrix_;
 			friend std::ostream& operator<<(std::ostream&, LinearSystem&);
+			friend std::istream& operator>>(std::istream&, LinearSystem&);
 	};
 }
 

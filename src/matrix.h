@@ -21,12 +21,16 @@ namespace KFU
 	{
 		public:
 			Matrix();
+			Matrix(int, int);
 			Matrix(type **, const int &, const int &);
 			Matrix(const Matrix &);
+
 			int rows() const;
 			int columns() const;
 
 			type getElem(int, int) const;
+
+			void resize(int, int);
 
 			Matrix& operator=(const Matrix&);
 		private:
@@ -37,6 +41,11 @@ namespace KFU
 
 	template <class type>
 	Matrix<type>::Matrix(): values()
+	{
+	}
+
+	template <class type>
+	Matrix<type>::Matrix(int rows, int columns): values(rows, std::vector<type>(columns))
 	{
 	}
 
@@ -75,6 +84,14 @@ namespace KFU
 	}
 
 	template <class type>
+	void Matrix<type>::resize(int n, int m)
+	{
+		values.resize(n);
+		for (int i = 0; i < values.size(); i++)
+			values[i].resize(m);
+	}
+
+	template <class type>
 	std::ostream& operator<<(std::ostream& out, const Matrix<type>& data)
 	{
 		for (int i = 0; i < data.rows(); i++)
@@ -96,13 +113,9 @@ namespace KFU
 	template <class type>
 	std::istream& operator>>(std::istream& in, Matrix<type>& data)
 	{
-		int rows, columns;
-		in >> rows >> columns;
-		data.values.resize(rows);
-		for (int i = 0; i < rows; i++)
+		for (int i = 0; i < data.rows(); i++)
 		{
-			data.values[i].resize(columns);
-			for (int j = 0; j < columns; j++)
+			for (int j = 0; j < data.columns(); j++)
 				in >> data.values[i][j];
 		}
 		return in;
