@@ -6,6 +6,7 @@ main
 *.log
 *.pdf
 *.aux
+*.gz
 
 # vim temporary files
 ~*
