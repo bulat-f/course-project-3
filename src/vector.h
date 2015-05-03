@@ -45,6 +45,8 @@ namespace KFU
 			Vector& operator=(const Vector&);
 			Vector& operator+(const Vector&);
 			Vector& operator-(const Vector&);
+			Vector& operator+=(const Vector&);
+			Vector& operator-=(const Vector&);
 			Vector& operator*(type);
 			Vector& operator/(type);
 		protected:
@@ -151,6 +153,26 @@ namespace KFU
 			(*result)[i] = (*this)[i] - other[i];
 		}
 		return *result;
+	}
+
+	template <class type>
+	Vector<type>& Vector<type>::operator+=(const Vector& other)
+	{
+		for (int i = 0; i < size(); i++)
+		{
+			(*this)[i] += other[i];
+		}
+		return *this;
+	}
+
+	template <class type>
+	Vector<type>& Vector<type>::operator-=(const Vector& other)
+	{
+		for (int i = 0; i < size(); i++)
+		{
+			(*this)[i] -= other[i];
+		}
+		return *this;
 	}
 
 	template <class type>

@@ -35,6 +35,7 @@ namespace KFU
 			void swap_lines(int, int);
 
 			Matrix& operator=(const Matrix&);
+			Vector<type>& operator[](int);
 		private:
 			Vector<Vector<type>> values;
 			friend std::ostream& operator<<<type>(std::ostream&, const Matrix&);
@@ -100,6 +101,19 @@ namespace KFU
 	}
 
 	template <class type>
+	Matrix<type>& Matrix<type>::operator=(const Matrix& other)
+	{
+		values = other.values;
+		return *this;
+	}
+
+	template <class type>
+	Vector<type>& Matrix<type>::operator[](int i)
+	{
+		return values[i];
+	}
+
+	template <class type>
 	std::ostream& operator<<(std::ostream& out, const Matrix<type>& data)
 	{
 		for (int i = 0; i < data.rows(); i++)
@@ -109,13 +123,6 @@ namespace KFU
 			out << std::endl;
 		}
 		return out;
-	}
-
-	template <class type>
-	Matrix<type>& Matrix<type>::operator=(const Matrix& other)
-	{
-		values = other.values;
-		return *this;
 	}
 
 	template <class type>

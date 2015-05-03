@@ -13,6 +13,7 @@ namespace KFU
 			LinearSystem();
 			LinearSystem(int, int);
 			LinearSystem(const Matrix<double>&, const Vector<double>&);
+			LinearSystem(const LinearSystem&);
 
 			int equations() const;
 			int variables() const;

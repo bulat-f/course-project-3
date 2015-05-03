@@ -1,16 +1,14 @@
 #include <iostream>
-#include <stdlib.h>
-#include "vector.h"
-#include "matrix.h"
+#include <fstream>
 #include "linear_system.h"
 
 using namespace std;
 
 int main()
 {
+	ifstream in("input");
 	KFU::LinearSystem sys(3, 3);
-	cin >> sys;
-	sys.swap_lines(1, 2);
-	cout << sys;
+	in >> sys;
+	cout << sys.solve();
 	return 0;
 }

@@ -18,6 +18,12 @@ namespace KFU
 		vector_ = v;
 	}
 
+	LinearSystem::LinearSystem(const LinearSystem& other)
+	{
+		matrix_ = other.matrix_;
+		vector_ = other.vector_;
+	}
+
 	int LinearSystem::equations() const
 	{
 		return vector_.size();
@@ -36,8 +42,26 @@ namespace KFU
 
 	Vector<double> LinearSystem::solve()
 	{
-		Vector<double> v;
-		return v;
+		LinearSystem tmp(*this);
+		Vector<double> result(variables());
+		double coefficient, sum;
+		for (int i = 0; i < tmp.equations() - 1; i++)
+		{
+			for (int k = i + 1; k < tmp.equations(); k++)
+			{
+				coefficient = tmp.matrix_[k][i] / tmp.matrix_[i][i];
+				tmp.matrix_[k] -= tmp.matrix_[i] * coefficient;
+				tmp.vector_[k] -= tmp.vector_[i] * coefficient;
+			}
+		}
+		for (int i = tmp.variables() - 1; i >= 0; i--)
+		{
+			sum = 0;
+			for (int j = i + 1; j < tmp.variables(); j++)
+				sum += result[j] * tmp.matrix_[i][j];
+			result[i] = (tmp.vector_[i] - sum) / tmp.matrix_[i][i];
+		}
+		return result;
 	}
 
 	std::ostream& operator<<(std::ostream& out, LinearSystem& sys)
