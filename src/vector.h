@@ -27,17 +27,26 @@ namespace KFU
 		public:
 			Vector();
 			Vector(int);
+			Vector(int, const type&);
 			Vector(type *, int, Orientation);
 			Vector(const Vector&);
 
 			int size() const;
 
+			bool empty() const;
+
 			void resize(int);
+			void swap(int, int);
+
+			Vector& swap(Vector&);
 
 			type operator[](int) const;
 			type& operator[](int);
 			Vector& operator=(const Vector&);
 			Vector& operator+(const Vector&);
+			Vector& operator-(const Vector&);
+			Vector& operator*(type);
+			Vector& operator/(type);
 		protected:
 			std::vector<type> values;
 			Orientation orient;
@@ -52,6 +61,11 @@ namespace KFU
 
 	template <class type>
 	Vector<type>::Vector(int size): values(size), orient(Orientation::horizontal)
+	{
+	}
+
+	template <class type>
+	Vector<type>::Vector(int size, const type& val): values(size, val), orient(Orientation::horizontal)
 	{
 	}
 
@@ -72,9 +86,30 @@ namespace KFU
 	}
 
 	template <class type>
+	bool Vector<type>::empty() const
+	{
+		return values.empty();
+	}
+
+	template <class type>
 	void Vector<type>::resize(int size)
 	{
 		values.resize(size);
+	}
+
+	template <class type>
+	void Vector<type>::swap(int i, int j)
+	{
+		typename std::vector<type>::iterator first = values.begin() + i;
+		typename std::vector<type>::iterator second = values.begin() + j;
+		std::swap_ranges(first, first + 1, second);
+	}
+
+	template <class type>
+	Vector<type>& Vector<type>::swap(Vector& other)
+	{
+		std::swap((*this), other);
+		return other;
 	}
 
 	template <class type>
@@ -97,11 +132,56 @@ namespace KFU
 	}
 
 	template <class type>
+	Vector<type>& Vector<type>::operator+(const Vector& other)
+	{
+		Vector<type> *result = new Vector<type>(size());
+		for (int i = 0; i < size(); i++)
+		{
+			(*result)[i] = (*this)[i] + other[i];
+		}
+		return *result;
+	}
+
+	template <class type>
+	Vector<type>& Vector<type>::operator-(const Vector& other)
+	{
+		Vector<type> *result = new Vector<type>(size());
+		for (int i = 0; i < size(); i++)
+		{
+			(*result)[i] = (*this)[i] - other[i];
+		}
+		return *result;
+	}
+
+	template <class type>
+	Vector<type>& Vector<type>::operator*(type scalar)
+	{
+		Vector<type> *result = new Vector<type>(size());
+		for (int i = 0; i < size(); i++)
+		{
+			(*result)[i] = (*this)[i] * scalar;
+		}
+		return *result;
+	}
+
+	template <class type>
+	Vector<type>& Vector<type>::operator/(type scalar)
+	{
+		Vector<type> *result = new Vector<type>(size());
+		for (int i = 0; i < size(); i++)
+		{
+			(*result)[i] = (*this)[i] / scalar;
+		}
+		return *result;
+	}
+
+	template <class type>
 	std::ostream& operator<<(std::ostream& out, const Vector<type>& data)
 	{
 		char separator = (' ');
 		for (int i = 0; i < data.size(); i++)
 			out << data[i] << separator;
+		out << std::endl;
 		return out;
 	}
 

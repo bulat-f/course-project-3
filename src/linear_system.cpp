@@ -6,7 +6,7 @@ namespace KFU
 	{
 	}
 
-	LinearSystem::LinearSystem(const int n, const int m)
+	LinearSystem::LinearSystem(int n, int m)
 	{
 		matrix_.resize(n, m);
 		vector_.resize(n);
@@ -26,6 +26,12 @@ namespace KFU
 	int LinearSystem::variables() const
 	{
 		return matrix_.columns();
+	}
+
+	void LinearSystem::swap_lines(int i, int j)
+	{
+		matrix_.swap_lines(i, j);
+		vector_.swap(i, j);
 	}
 
 	Vector<double> LinearSystem::solve()

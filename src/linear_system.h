@@ -11,11 +11,13 @@ namespace KFU
 	{
 		public:
 			LinearSystem();
-			LinearSystem(const int, const int);
+			LinearSystem(int, int);
 			LinearSystem(const Matrix<double>&, const Vector<double>&);
 
 			int equations() const;
 			int variables() const;
+
+			void swap_lines(int, int);
 
 			Vector<double> solve();
 		private:

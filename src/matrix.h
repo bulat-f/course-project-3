@@ -3,7 +3,8 @@
 
 #include <fstream>
 #include <iostream>
-#include <vector>
+#include "vector.h"
+
 
 namespace KFU
 {
@@ -31,10 +32,11 @@ namespace KFU
 			type getElem(int, int) const;
 
 			void resize(int, int);
+			void swap_lines(int, int);
 
 			Matrix& operator=(const Matrix&);
 		private:
-			std::vector<std::vector<type>> values;
+			Vector<Vector<type>> values;
 			friend std::ostream& operator<<<type>(std::ostream&, const Matrix&);
 			friend std::istream& operator>><type>(std::istream&, Matrix&);
 	};
@@ -45,7 +47,7 @@ namespace KFU
 	}
 
 	template <class type>
-	Matrix<type>::Matrix(int rows, int columns): values(rows, std::vector<type>(columns))
+	Matrix<type>::Matrix(int rows, int columns): values(rows, Vector<type>(columns))
 	{
 	}
 
@@ -89,6 +91,12 @@ namespace KFU
 		values.resize(n);
 		for (int i = 0; i < values.size(); i++)
 			values[i].resize(m);
+	}
+
+	template <class type>
+	void Matrix<type>::swap_lines(int i, int j)
+	{
+		values[i].swap(values[j]);
 	}
 
 	template <class type>
