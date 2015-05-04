@@ -1,6 +1,8 @@
 #ifndef COMPLEX_H_
 #define COMPLEX_H_
 
+#include <iostream>
+
 class Complex
 {
 	public:
@@ -41,6 +43,8 @@ class Complex
 		friend Complex& operator-(double, const Complex&);
 		friend Complex& operator*(double, const Complex&);
 		friend Complex& operator/(double, const Complex&);
+		friend std::istream& operator>>(std::istream&, Complex&);
+		friend std::ostream& operator<<(std::ostream&, const Complex&);
 };
 
 #endif

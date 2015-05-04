@@ -12,9 +12,10 @@ int main()
 	in >> sys;
 	cout << sys.solve();
 
-	Complex c1(1, 3), c2(4, 2), c = c1 * 4;
-	c1 *= 4;
-	if (c1 == c)
+	Complex c1, c2;
+	cin >> c1 >> c2;
+	cout << c1 << ' ' << c2 << endl;
+	if (c1 == c2)
 		cout << "Yes\n";
 	return 0;
 }

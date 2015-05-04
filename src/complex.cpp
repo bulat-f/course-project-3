@@ -163,3 +163,37 @@ Complex& operator/(double left, const Complex& right)
 	(*result) = (left * right.conjugate()) / pow(right.module(), 2);
 	return *result;
 }
+
+std::istream& operator>>(std::istream& in, Complex& x)
+{
+	double _Re = 0, _Im = 0;
+	char ch;
+	in >> ch;
+	if (ch == '(')
+	{
+		in >> _Re;
+		in >> ch;
+		if (ch == ',')
+		{
+			in >> _Im;
+			in >> ch;
+		}
+		if (ch != ')')
+		{
+			in.setstate(std::ios_base::failbit);
+		}
+	}
+	else
+	{
+		in.putback(ch);
+		in >> _Re;
+	}
+	x = Complex(_Re, _Im);
+	return in;
+}
+
+std::ostream& operator<<(std::ostream& out, const Complex& x)
+{
+	out << '(' << x.Re << ',' << x.Im << ')';
+	return out;
+}
