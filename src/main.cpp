@@ -11,11 +11,5 @@ int main()
 	KFU::LinearSystem sys(3, 3);
 	in >> sys;
 	cout << sys.solve();
-
-	Complex c1, c2;
-	cin >> c1 >> c2;
-	cout << c1 << ' ' << c2 << endl;
-	if (c1 == c2)
-		cout << "Yes\n";
 	return 0;
 }
