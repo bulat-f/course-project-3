@@ -1,6 +1,7 @@
 Course work
 ===========
 
-**Scientific adviser:** PNB
+### **Scientific adviser:** [Nikolai B. Pleshchinskii](http://abcpnb.ru/)
+#### Doctor of Science (Physics & Mathematics), Professor. Chief of Applied Mathematics Chair. Kazan Federal University, Russia
 
-**Problem:** Calculate the wave propagation in dielectric waveguide with an infinite parallel partition (a gap)
+**Problem:** Diffraction TE-waves in a planar waveguide on the opening in the longitudinal partition
