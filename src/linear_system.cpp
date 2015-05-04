@@ -12,7 +12,7 @@ namespace KFU
 		vector_.resize(n);
 	}
 
-	LinearSystem::LinearSystem(const Matrix<double>& m, const Vector<double>& v)
+	LinearSystem::LinearSystem(const Matrix<Complex>& m, const Vector<Complex>& v)
 	{
 		matrix_ = m;
 		vector_ = v;
@@ -40,11 +40,11 @@ namespace KFU
 		vector_.swap(i, j);
 	}
 
-	Vector<double> LinearSystem::solve()
+	Vector<Complex> LinearSystem::solve()
 	{
 		LinearSystem tmp(*this);
-		Vector<double> result(variables());
-		double coefficient, sum;
+		Vector<Complex> result(variables());
+		Complex coefficient, sum;
 		for (int i = 0; i < tmp.equations() - 1; i++)
 		{
 			for (int k = i + 1; k < tmp.equations(); k++)

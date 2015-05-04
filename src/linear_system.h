@@ -4,6 +4,7 @@
 #include <iostream>
 #include "matrix.h"
 #include "vector.h"
+#include "complex.h"
 
 namespace KFU
 {
@@ -12,7 +13,7 @@ namespace KFU
 		public:
 			LinearSystem();
 			LinearSystem(int, int);
-			LinearSystem(const Matrix<double>&, const Vector<double>&);
+			LinearSystem(const Matrix<Complex>&, const Vector<Complex>&);
 			LinearSystem(const LinearSystem&);
 
 			int equations() const;
@@ -20,10 +21,10 @@ namespace KFU
 
 			void swap_lines(int, int);
 
-			Vector<double> solve();
+			Vector<Complex> solve();
 		private:
-			Vector<double> vector_;
-			Matrix<double> matrix_;
+			Vector<Complex> vector_;
+			Matrix<Complex> matrix_;
 			friend std::ostream& operator<<(std::ostream&, LinearSystem&);
 			friend std::istream& operator>>(std::istream&, LinearSystem&);
 	};
