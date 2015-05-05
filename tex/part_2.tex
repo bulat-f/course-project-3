@@ -2,12 +2,12 @@
 
 Сшиваем поля при $z = 0$ и $0 < x < a$
 \begin{equation}
-	\label{stitching_1}
+	\label{stitching_z_0_1}
 	a_l^0\sin{\frac{\pi l}{a}x} + \sum\limits_{n=1}^{+\infty}b_n^1\sin{\frac{\pi n}{a}x} = \sum\limits_{n=1}^{+\infty}\left(a_n^5+b_n^5\right)\sin{\frac{\pi n}{b}x},
 \end{equation}
 
 \begin{equation}
-	\label{stitching_2}
+	\label{stitching_z_0_2}
 	a_l^0\gamma_{al}\sin{\frac{\pi l}{a}x} - \sum\limits_{n=1}^{+\infty}b_n^1\gamma_{an}\sin{\frac{\pi n}{a}x} = \sum\limits_{n=1}^{+\infty}\left(a_n^5-b_n^5\right)\gamma_{n}\sin{\frac{\pi n}{b}x}.
 \end{equation}
 
@@ -16,9 +16,9 @@ $$
 	\int\limits_0^a\left(\sum\limits_{n=1}^{+\infty}b_n^1\gamma_{an}\sin{\frac{\pi n}{a}t}\right)\left(\frac{2}{a}\sum\limits_{m=1}^{+\infty}\frac{1}{\gamma_{am}}sin{\frac{\pi m}{a}t} \cdot sin{\frac{\pi m}{a}x}\right)dt = \sum\limits_{n=1}^{+\infty}b_n^1\sin{\frac{\pi n}{a}x}, 0 < x < a.
 $$
 
-В равенсве ~(\ref{stitching_2}) заменим $x$ на $t$, умножим обе части на ядро интегрального тождества и проинтегрируем от $0$ до $a$. Тогда
+В равенсве ~(\ref{stitching_z_0_2}) заменим $x$ на $t$, умножим обе части на ядро интегрального тождества и проинтегрируем от $0$ до $a$. Тогда
 \begin{equation}
-	\label{stitching_2_a}
+	\label{stitching_z_0_2_a}
 	a_l^0\sin{\frac{\pi l}{a}x}-\sum\limits_{n=1}^{+\infty}b_n^1\sin{\frac{\pi n}{a}x} = \sum\limits_{n=1}^{+\infty}\left(a_n^5-b_n^5\right)\gamma_{n}\frac{2}{a}\sum\limits_{m=1}^{+\infty}\frac{1}{\gamma_{am}}I_{n,m}^a\sin{\frac{\pi m}{a}x},
 \end{equation}
 где
@@ -26,20 +26,20 @@ $$
 	I_{n,m}^a = \int\limits_0^a\sin{\frac{\pi n}{b}t} \cdot \sin{\frac{\pi m}{a}t} \cdot dt.
 $$
 
-Сложим ~(\ref{stitching_1}) и ~(\ref{stitching_2_a}), получим при $0 < x < a$
+Сложим ~(\ref{stitching_z_0_1}) и ~(\ref{stitching_z_0_2_a}), получим при $0 < x < a$
 \begin{equation}
-	\label{stitching_3}
+	\label{stitching_z_0_3}
 	2a_l^0\sin{\frac{\pi l}{a}x} = \sum\limits_{n=1}^{+\infty}\left(a_n^5+b_n^5\right)\sin{\frac{\pi n}{b}x} + \sum\limits_{n=1}^{+\infty}\left(a_n^5-b_n^5\right)\gamma_{n}\frac{2}{a}\sum\limits_{m=1}^{+\infty}\frac{1}{\gamma_{am}}I_{n,m}^a\sin{\frac{\pi m}{a}x}.
 \end{equation}
 
 При $z = 0, a < x < b$
 \begin{equation}
-	\label{stitching_4}
+	\label{stitching_z_0_4}
 	\sum\limits_{n=1}^{\infty}b_n^3\sin{\frac{\pi n}{b-a}(x-a)} = \sum\limits_{n=1}^{\infty}\left(a_n^5+b_n^5\right)\sin{\frac{\pi n}{b}x},	
 \end{equation}
 
 \begin{equation}
-	\label{stitching_5}
+	\label{stitching_z_0_5}
 	-\sum\limits_{n=1}^{\infty}b_n^3\gamma_{bn}\sin{\frac{\pi n}{b-a}(x-a)} = \sum\limits_{n=1}^{\infty}\left(a_n^5+b_n^5\right)\gamma_{n}\sin{\frac{\pi n}{b}x},	
 \end{equation}
 
@@ -48,9 +48,9 @@ $$
 	\int\limits_a^b\left(\sum\limits_{n=1}^{+\infty}b_n^3\gamma_{bn}\sin{\frac{\pi n}{b-a}(t-a)}\right)\left(\frac{2}{b-a}\sum\limits_{m=1}^{+\infty}\frac{1}{\gamma_{bm}}sin{\frac{\pi m}{b-a}(t-a)} \cdot sin{\frac{\pi m}{b-a}(x-a)}\right)dt = \sum\limits_{n=1}^{+\infty}b_n^3\sin{\frac{\pi n}{b-a}(x-a)}.
 $$
 
-В равенсве ~(\ref{stitching_5}) заменим $x$ на $t$, умножим обе части на ядро интегрального тождества и проинтегрируем от $a$ до $b$. Тогда
+В равенсве ~(\ref{stitching_z_0_5}) заменим $x$ на $t$, умножим обе части на ядро интегрального тождества и проинтегрируем от $a$ до $b$. Тогда
 \begin{equation}
-	\label{stitching_5_a}
+	\label{stitching_z_0_5_a}
 	-\sum\limits_{n=1}^{+\infty}b_n^3\sin{\frac{\pi n}{b-a}(x-a)} = \sum\limits_{n=1}^{+\infty}\left(a_n^5-b_n^5\right)\gamma_{n}\frac{2}{b-a}\sum\limits_{m=1}^{+\infty}\frac{1}{\gamma_{bm}}I_{n,m}^b\sin{\frac{\pi m}{b-a}(x-a)},
 \end{equation}
 где
@@ -58,13 +58,13 @@ $$
 	I_{n,m}^b = \int\limits_a^b\sin{\frac{\pi n}{b}t} \cdot \sin{\frac{\pi m}{b-a}(t-a)} \cdot dt.
 $$
 
-Сложим ~(\ref{stitching_4}) и ~(\ref{stitching_5_a}), получим при $a < x < b$
+Сложим ~(\ref{stitching_z_0_4}) и ~(\ref{stitching_z_0_5_a}), получим при $a < x < b$
 \begin{equation}
-	\label{stitching_6}
+	\label{stitching_z_0_6}
 	0 = \sum\limits_{n=1}^{+\infty}\left(a_n^5+b_n^5\right)\sin{\frac{\pi n}{b}x} + \sum\limits_{n=1}^{+\infty}\left(a_n^5-b_n^5\right)\gamma_{n}\frac{2}{b-a}\sum\limits_{m=1}^{+\infty}\frac{1}{\gamma_{bm}}I_{n,m}^b\sin{\frac{\pi m}{b-a}(x-a)}.
 \end{equation}
 
-Имеем парное уравнение ~(\ref{stitching_3}), ~(\ref{stitching_6}). Умножим обе его части на $\sin{\frac{\pi k}{b}x}$ и проинтегрируем от $0$ до $b$. В итоге получим первую половину большой БСЛАУ
+Имеем парное уравнение ~(\ref{stitching_z_0_3}), ~(\ref{stitching_z_0_6}). Умножим обе его части на $\sin{\frac{\pi k}{b}x}$ и проинтегрируем от $0$ до $b$. В итоге получим первую половину большой БСЛАУ
 \begin{equation}
 	\frac{b}{2}\left(a_k^5+b_k^5\right)+\sum\limits_{n=1}^{+\infty}\left(a_n^5-b_n^5\right)\gamma_{n}\left[\frac{2}{a}\sum\limits_{m=1}^{+\infty}\frac{1}{\gamma_{am}}I_{n,m}^aI_{k,m}^a+\frac{2}{b-a}\sum\limits_{m=1}^{+\infty}\frac{1}{\gamma_{bm}}I_{n,m}^bI_{k,m}^b\right] = 2a_l^0I_{k,l}^a,
 \end{equation}
