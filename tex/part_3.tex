@@ -37,23 +37,23 @@ $$
 При $z = 0, a < x < b$
 \begin{equation}
 	\label{stitching_z_c_4}
-	\sum\limits_{n=1}^{\infty}a_n^4e^{i\gamma_{an}c}\sin{\frac{\pi n}{b-a}(x-a)} = \sum\limits_{n=1}^{\infty}\left(a_n^5e^{i\gamma_{n}c}+b_n^5e^{-i\gamma_{n}c}\right)\sin{\frac{\pi n}{b}x},	
+	\sum\limits_{n=1}^{\infty}a_n^4e^{i\gamma_{bn}c}\sin{\frac{\pi n}{b-a}(x-a)} = \sum\limits_{n=1}^{\infty}\left(a_n^5e^{i\gamma_{n}c}+b_n^5e^{-i\gamma_{n}c}\right)\sin{\frac{\pi n}{b}x},	
 \end{equation}
 
 \begin{equation}
 	\label{stitching_z_c_5}
-	\sum\limits_{n=1}^{\infty}a_n^4\gamma_{an}e^{i\gamma_{an}c}\sin{\frac{\pi n}{b-a}(x-a)} = \sum\limits_{n=1}^{\infty}\left(a_n^5e^{i\gamma_{n}c}+b_n^5e^{-i\gamma_{n}c}\right)\gamma_{n}\sin{\frac{\pi n}{b}x},	
+	\sum\limits_{n=1}^{\infty}a_n^4\gamma_{bn}e^{i\gamma_{bn}c}\sin{\frac{\pi n}{b-a}(x-a)} = \sum\limits_{n=1}^{\infty}\left(a_n^5e^{i\gamma_{n}c}+b_n^5e^{-i\gamma_{n}c}\right)\gamma_{n}\sin{\frac{\pi n}{b}x},	
 \end{equation}
 
 Исключим $a_n^4$ с помощью интегрально-сумматорного тождества, $a < x < b$,
 $$
-	\int\limits_a^b\left(\sum\limits_{n=1}^{+\infty}a_n^a\gamma_{an}e^{i\gamma_{an}c}\sin{\frac{\pi n}{b-a}(t-a)}\right)\left(\frac{2}{b-a}\sum\limits_{m=1}^{+\infty}\frac{1}{\gamma_{am}}\sin{\frac{\pi m}{b-a}(t-a)} \cdot sin{\frac{\pi m}{b-a}(x-a)}\right)dt = \sum\limits_{n=1}^{+\infty}a_n^4e^{i\gamma_{an}c}\sin{\frac{\pi n}{b-a}(x-a)}.
+	\int\limits_a^b\left(\sum\limits_{n=1}^{+\infty}a_n^4\gamma_{bn}e^{i\gamma_{bn}c}\sin{\frac{\pi n}{b-a}(t-a)}\right)\left(\frac{2}{b-a}\sum\limits_{m=1}^{+\infty}\frac{1}{\gamma_{bm}}\sin{\frac{\pi m}{b-a}(t-a)} \cdot sin{\frac{\pi m}{b-a}(x-a)}\right)dt = \sum\limits_{n=1}^{+\infty}a_n^4e^{i\gamma_{bn}c}\sin{\frac{\pi n}{b-a}(x-a)}.
 $$
 
 В равенсве ~(\ref{stitching_z_c_5}) заменим $x$ на $t$, умножим обе части на ядро интегрального тождества и проинтегрируем от $a$ до $b$. Тогда
 \begin{equation}
 	\label{stitching_z_c_5_a}
-	\sum\limits_{n=1}^{+\infty}a_n^4e^{i\gamma_{an}c}\sin{\frac{\pi n}{b-a}(x-a)} = \sum\limits_{n=1}^{+\infty}\left(a_n^5e^{i\gamma_{n}c}-b_n^5e^{-i\gamma_{n}c}\right)\gamma_{n}\frac{2}{b-a}\sum\limits_{m=1}^{+\infty}\frac{1}{\gamma_{am}}I_{n,m}^b\sin{\frac{\pi m}{b-a}(x-a)},
+	\sum\limits_{n=1}^{+\infty}a_n^4e^{i\gamma_{bn}c}\sin{\frac{\pi n}{b-a}(x-a)} = \sum\limits_{n=1}^{+\infty}\left(a_n^5e^{i\gamma_{n}c}-b_n^5e^{-i\gamma_{n}c}\right)\gamma_{n}\frac{2}{b-a}\sum\limits_{m=1}^{+\infty}\frac{1}{\gamma_{bm}}I_{n,m}^b\sin{\frac{\pi m}{b-a}(x-a)},
 \end{equation}
 где
 $$
@@ -63,7 +63,7 @@ $$
 Вычтем из ~(\ref{stitching_z_c_4}) ~(\ref{stitching_z_c_5_a}), получим при $a < x < b$
 \begin{equation}
 	\label{stitching_z_c_6}
-	0 = \sum\limits_{n=1}^{\infty}\left(a_n^5e^{i\gamma_{n}c}+b_n^5e^{-i\gamma_{n}c}\right)\sin{\frac{\pi n}{b}x} - \sum\limits_{n=1}^{+\infty}\left(a_n^5e^{i\gamma_{n}c}-b_n^5e^{-i\gamma_{n}c}\right)\gamma_{n}\frac{2}{b-a}\sum\limits_{m=1}^{+\infty}\frac{1}{\gamma_{am}}I_{n,m}^b\sin{\frac{\pi m}{b-a}(x-a)}.
+	0 = \sum\limits_{n=1}^{\infty}\left(a_n^5e^{i\gamma_{n}c}+b_n^5e^{-i\gamma_{n}c}\right)\sin{\frac{\pi n}{b}x} - \sum\limits_{n=1}^{+\infty}\left(a_n^5e^{i\gamma_{n}c}-b_n^5e^{-i\gamma_{n}c}\right)\gamma_{n}\frac{2}{b-a}\sum\limits_{m=1}^{+\infty}\frac{1}{\gamma_{bm}}I_{n,m}^b\sin{\frac{\pi m}{b-a}(x-a)}.
 \end{equation}
 
 Имеем парное уравнение ~(\ref{stitching_z_c_3}), ~(\ref{stitching_z_c_6}). Умножим обе его части на $\sin{\frac{\pi k}{b}x}$ и проинтегрируем от $0$ до $b$. В итоге получим вторую половину большой БСЛАУ
