@@ -45,8 +45,16 @@ namespace KFU
 		LinearSystem tmp(*this);
 		Vector<Complex> result(variables());
 		Complex coefficient, sum;
+		int max_row;
 		for (int i = 0; i < tmp.equations() - 1; i++)
 		{
+			max_row = i;
+			for (int j = i + 1; j < tmp.equations(); j++)
+			{
+				if (matrix_[j][i].module() > tmp.matrix_[max_row][i].module())
+					max_row = j;
+			}
+			tmp.swap_lines(i, max_row);
 			for (int k = i + 1; k < tmp.equations(); k++)
 			{
 				coefficient = tmp.matrix_[k][i] / tmp.matrix_[i][i];
