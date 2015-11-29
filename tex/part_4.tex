@@ -1,1 +1,31 @@
 \section{Переход из БСЛАУ к СЛАУ}
+
+Выберем $n$, и (\ref{first_part}), (\ref{second_part}) оставим только $n$ уравнений и сумму тоже ''срежем'' до $n$. Получившуюся СЛАУ обозначим как $Dy = r$
+
+Система будет иметь размерность $2n$. Первые $n$ уравений возьмем из (\ref{first_part}), остальные $n+1 \dots 2n$ из (\ref{second_part}).
+
+Для определенности, будем считать, что $y_1, y_2, \dots, y_n$ будут соответсвовать $a^5_1, a^5_2, \dots, a^5_n$, а $y_{n+1}, y_{n+2}, \dots, y_{2n}$ -- $b^5_1, b^5_2, \dots, b^5_n$. Тогда, соответсвенно, компонены матрицы $G$ будут иметь следующий вид
+
+$$
+	\begin{array}{rrrrl}
+		\mbox{при} & k = \overline{1,n} & \mbox{и} & t = \overline{1, n} &
+		d_{kt} = \gamma_{t}\left[\frac{2}{a}\sum\limits_{m=1}^{M}\frac{1}{\gamma_{am}}I_{t,m}^aI_{k,m}^a+\frac{2}{b-a}\sum\limits_{m=1}^{M}\frac{1}{\gamma_{bm}}I_{t,m}^bI_{k,m}^b\right] + \frac{b}{2}\delta_{kt}\\
+
+		\mbox{при} & k = \overline{1,n} & \mbox{и} & t = \overline{(n+1), 2n} &
+		d_{kt} = -\gamma_{t}\left[\frac{2}{a}\sum\limits_{m=1}^{M}\frac{1}{\gamma_{am}}I_{t,m}^aI_{k,m}^a+\frac{2}{b-a}\sum\limits_{m=1}^{M}\frac{1}{\gamma_{bm}}I_{t,m}^bI_{k,m}^b\right] + \frac{b}{2}\delta_{kt}\\
+
+		\mbox{при} & k = \overline{(n+1),2n} & \mbox{и} & t = \overline{1, n} &
+		d_{kt} = e^{i\gamma_{t}c}\gamma_{t}\left[\frac{2}{a}\sum\limits_{m=1}^{M}\frac{1}{\gamma_{am}}I_{t,m}^aI_{k,m}^a+\frac{2}{b-a}\sum\limits_{m=1}^{M}\frac{1}{\gamma_{bm}}I_{t,m}^bI_{k,m}^b\right] + \frac{b}{2}e^{i\gamma_{k}c}\delta_{kt}\\
+
+		\mbox{при} & k = \overline{(n+1),2n} & \mbox{и} & t = \overline{(n+1), 2n} &
+		d_{kt} = e^{-i\gamma_{t}c}\gamma_{t}\left[\frac{2}{a}\sum\limits_{m=1}^{M}\frac{1}{\gamma_{am}}I_{t,m}^aI_{k,m}^a+\frac{2}{b-a}\sum\limits_{m=1}^{M}\frac{1}{\gamma_{bm}}I_{t,m}^bI_{k,m}^b\right] + \frac{b}{2}e^{-i\gamma_{k}c}\delta_{kt}\\
+	\end{array}
+$$
+
+А вектор правой части --
+$$
+	\begin{array}{rclcl}
+		r_k &=& 2a_l^0I_{k,l}^a & \mbox{когда} & k = \overline{1,n}\\
+		r_k &=& 0 & \mbox{когда} & k = \overline{(n+1),2n}\\
+	\end{array}
+$$
