@@ -1,7 +1,7 @@
 cc = g++
 cflags = -c -Wall
 std11 = -std=c++11
-obj = main.o linear_system.o complex.o
+obj = main.o linear_system.o complex.o waveguide.o
 
 all: src
 
@@ -16,6 +16,9 @@ linear_system.o: linear_system.cpp linear_system.h
 
 complex.o: complex.cpp complex.h
 	$(cc) $(cflags) complex.cpp
+
+waveguide.o: waveguide.cpp waveguide.h
+	$(cc) $(cflags) $(std11) waveguide.cpp
 
 clean:
 	rm -rf *.o main

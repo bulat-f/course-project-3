@@ -1,5 +1,5 @@
 #ifndef LINEAR_SYSTEM_H_
-#define LINEAR_SISTEM_H_
+#define LINEAR_SYSTEM_H_
 
 #include <iostream>
 #include "matrix.h"
@@ -12,6 +12,7 @@ namespace KFU
 	{
 		public:
 			LinearSystem();
+			LinearSystem(int);
 			LinearSystem(int, int);
 			LinearSystem(const Matrix<Complex>&, const Vector<Complex>&);
 			LinearSystem(const LinearSystem&);
@@ -22,7 +23,7 @@ namespace KFU
 			void swap_lines(int, int);
 
 			Vector<Complex> solve();
-		private:
+		protected:
 			Vector<Complex> vector_;
 			Matrix<Complex> matrix_;
 			friend std::ostream& operator<<(std::ostream&, LinearSystem&);

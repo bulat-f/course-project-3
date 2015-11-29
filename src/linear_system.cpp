@@ -6,6 +6,12 @@ namespace KFU
 	{
 	}
 
+	LinearSystem::LinearSystem(int n)
+	{
+		matrix_.resize(n, n);
+		vector_.resize(n);
+	}
+
 	LinearSystem::LinearSystem(int n, int m)
 	{
 		matrix_.resize(n, m);

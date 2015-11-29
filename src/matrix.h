@@ -37,7 +37,7 @@ namespace KFU
 			Matrix& operator=(const Matrix&);
 			Vector<type>& operator[](int);
 		private:
-			Vector<Vector<type>> values;
+			Vector< Vector<type> > values;
 			friend std::ostream& operator<<<type>(std::ostream&, const Matrix&);
 			friend std::istream& operator>><type>(std::istream&, Matrix&);
 	};
