@@ -2,19 +2,24 @@
 #define WAVEGUIDE_H_
 
 #include <iostream>
-#include "linear_system.h"
+#include "complex.h"
 
 namespace KFU
 {
-	class Waveguide: protected LinearSystem
+	class Waveguide
 	{
 		public:
-			Waveguide(double k, double a, double b, double c);
+			Waveguide(double, double, double, double);
+			Complex gamma_am(int m);
+			Complex gamma_bm(int m);
+			Complex gamma_m(int m);
 		private:
 			double wavenumber;
 			double height;
-			double position;
-			double width;
+			double position; // partitions
+			double width;    // partitions
+
+			Complex gamma(int n, double h);
 	};
 }
 

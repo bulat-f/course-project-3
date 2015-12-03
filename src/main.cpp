@@ -8,11 +8,11 @@ using namespace std;
 
 int main()
 {
-	ifstream in("input");
-	KFU::LinearSystem sys(3, 3);
+	// ifstream in("input");
+	// KFU::LinearSystem sys(3, 3);
 	KFU::Wave w(10, 3, 215.3);
 	KFU::Waveguide(120, 10, 5, 4);
-	in >> sys;
-	cout << sys.solve();
+	// in >> sys;
+	// cout << sys.solve();
 	return 0;
 }
