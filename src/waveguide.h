@@ -10,16 +10,24 @@ namespace KFU
 	{
 		public:
 			Waveguide(double, double, double, double);
-			Complex gamma_am(int m);
-			Complex gamma_bm(int m);
-			Complex gamma_m(int m);
+
+			double I_a(int n, int m);
+			double I_b(int n, int m);
+
+			double gamma2_a(int m);
+			double gamma2_b(int m);
+			double gamma2(int m);
+
+			Complex gamma_a(int m);
+			Complex gamma_b(int m);
+			Complex gamma(int m);
 		private:
 			double wavenumber;
 			double height;
 			double position; // partitions
 			double width;    // partitions
 
-			Complex gamma(int n, double h);
+			double gamma2(int n, double h);
 	};
 }
 
