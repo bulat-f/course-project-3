@@ -2,8 +2,9 @@
 
 namespace KFU
 {
-	Waveguide::Waveguide(int n, int m, int l, double al, double a, double b, double c): LinearSystem(2 * n)
+	Waveguide::Waveguide(double k, double a, double b, double c):
+	wavenumber(k), height(a), position(b), width(c)
 	{
-		std::cout << "Constructor\n";
+		std::cout << "Constructor\n" << wavenumber << std::endl;
 	}
 }

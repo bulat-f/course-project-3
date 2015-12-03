@@ -1,5 +1,5 @@
 #ifndef WAVEGUIDE_H_
-#define WAVEGUIDE_H
+#define WAVEGUIDE_H_
 
 #include <iostream>
 #include "linear_system.h"
@@ -9,8 +9,12 @@ namespace KFU
 	class Waveguide: protected LinearSystem
 	{
 		public:
-			Waveguide(int n, int m, int l, double al, double a, double b, double c);
+			Waveguide(double k, double a, double b, double c);
 		private:
+			double wavenumber;
+			double height;
+			double position;
+			double width;
 	};
 }
 
