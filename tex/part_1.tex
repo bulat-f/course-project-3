@@ -1,10 +1,55 @@
-\section{Введение}
+\section{Потенциальные функции в частичных областях}
 
-Дано
+Система уравнений Максвелла в двумерном случае
+\[  \frac{\partial H_y}{\partial z} = i\omega\varepsilon_0\varepsilon E_x , \quad 
+\frac{\partial E_y}{\partial z} = -i\omega\varepsilon_0\varepsilon E_x
+ ,\]
+ \[  \frac{\partial H_x}{\partial z} -
+  \frac{\partial H_z}{\partial x} =
+ i\omega\varepsilon_0\varepsilon E_x , \quad 
+\frac{\partial E_x}{\partial z} -
+\frac{\partial E_z}{\partial x}=
+i\omega\varepsilon_0\varepsilon E_x
+, \]
+\[  \frac{\partial H_y}{\partial x} = -i\omega\varepsilon_0\varepsilon E_x , \quad 
+\frac{\partial E_y}{\partial x} = i\omega\varepsilon_0\varepsilon E_x
+ ,\]
+распадается на две независимые подсистемы.
+
+Для ТE-волн
+$$
+	E_y=u, H_x= \frac{\partial u}{\partial z} \frac{1}{i\omega\mu_0\mu}
+$$,
+$$
+	H_z=- \frac{\partial u}{\partial x} \frac{1}{i\omega\mu_0\mu}
+$$
+
+Потенциальная функция $u(x,z)$ удовлетворяет уравнению Гельмгольца 
+$$ \frac{\partial^2 u}{\partial x^2} +
+\frac{\partial^2 u}{\partial z^2} +
+k^2u =0, k^2=\omega^2\mu_0\mu\varepsilon_0\varepsilon
+$$.
+
+На стенках волновода должны быть равны нулю касательные составляющие вектора $E$, то есть компоненты $E_y$ и $E_z$.
+
+Исследуем элементарные ТE-волны плоского волновода. Для этого найдем методом разделения переменных частные решения уравнения Гельмгольца в полосе $0<x<a$, удовлетворяющие условиям $u=0$ при $x=0$ и при $x=a$. Если $u(x,z)= X(x)Z(z), $ то
+
+$$
+	\frac{X''(x)}{X(x)}+ \frac{Z''(z)}{Z(z)}+k^2=0
+$$
+
+Введем постоянную разделения, равную первой дроби в левой части последнего равенства. При неотрицательных значениях этой постоянной не существует ненулевых решений уравнения $ X''(x)- \alpha^2 X(x)=0$, удовлетворяющих краевым условиям $X'(0)=0, X'(a)=0 $. Если же постоянная разделения отрицательная, то уравнение $ X''(x)- \alpha^2 X(x)=0$ имеет ненулевые решения $X_m(x)= c\cos\alpha_mx$, удовлетворяющие краевым условиям, при $\alpha=\alpha_m=\pi m a, m=0,1,...$. Пусть 
+$\gamma_m=\sqrt{k^2-\left(\frac{\pi m}{a}\right)^2}$,
+
+тогда потенциальным функциям 
+$ u_m(x,z)=c\sin\frac{\pi m x}{a}\exp^{\pm i\gamma_m z}, m=0,1,...\quad , $
+соответствуют ТМ-волны плоского волновода. Знак в показателе экспоненты выбирается в зависимости от направления волны.
+
+Потенциальную функцию приходящей слева волны зададим в виде
 $$
 	u^0(x, z) = a_l^0 e^{i\gamma_{al}z}\sin{\frac{\pi l}{a}x}
 $$
-Ищем
+и будем искать потенциальные функции рассеянного поля в частичных областях в виде
 $$
 	\begin{array}{ll}
 	u^1(x, z)=\sum\limits_{n=1}^{\infty}b_n^1e^{-i\gamma_{an}z}\sin{\frac{\pi n}{a}x},&
