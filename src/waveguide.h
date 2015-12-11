@@ -9,7 +9,11 @@ namespace KFU
 	class Waveguide
 	{
 		public:
-			Waveguide(double, double, double, double);
+			Waveguide(double, double, double, double, int);
+
+			Complex S(int i, int j);
+
+			double delta(int i, int j);
 
 			double I_a(int n, int m);
 			double I_b(int n, int m);
@@ -26,6 +30,8 @@ namespace KFU
 			double height;
 			double position; // partitions
 			double width;    // partitions
+
+			int M;
 
 			double gamma2(int n, double h);
 	};

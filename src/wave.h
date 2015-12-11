@@ -6,11 +6,14 @@
 
 namespace KFU
 {
-	class Wave: protected Vector<Complex>
+	class Wave: public Vector<Complex>
 	{
 		public:
 			Wave(int n, int l, Complex al);
+
+      int getNumber();
 		private:
+      int number;
 	};
 }
 
