@@ -1,18 +1,20 @@
-\documentclass{report}
+\documentclass[a4paper,12pt]{report}
 \usepackage[utf8]{inputenc}
 \usepackage[english, russian]{babel}
 \usepackage{amsthm}
 \usepackage{tikz}
 \usepackage{mathtools}
-\usepackage[left=2cm,right=2cm,top=2.2cm,bottom=2.2cm]{geometry}
+\usepackage[left=2.5cm,right=1.5cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{titlesec}
 \newtheorem{theorem}{Теорема}[part]
 \author{Фатхрахманов Булат}
 \title{Дифракция TE-волны в плоском волноводе на отверстии в продольной перегородке}
 \begin{document}
-	\maketitle
+	\input{title}
 	\input{problem}
 	\input{part_1}
 	\input{part_2}
 	\input{part_3}
 	\input{part_4}
+	\input{bibl}
 \end{document}

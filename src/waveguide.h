@@ -25,6 +25,8 @@ namespace KFU
 			Complex gamma_a(int m);
 			Complex gamma_b(int m);
 			Complex gamma(int m);
+
+			Complex exp_i(int k);
 		private:
 			double wavenumber;
 			double height;
@@ -34,6 +36,10 @@ namespace KFU
 			int M;
 
 			double gamma2(int n, double h);
+
+			double I_base(int n, int m, double a, double b);
+
+			Complex _exp_i(Complex x);
 	};
 }
 

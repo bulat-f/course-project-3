@@ -4,19 +4,17 @@
 #include "waveguide_system.h"
 #include "wave.h"
 #include "linear_system.h"
+#include <cmath>
 
 using namespace std;
 
 int main()
 {
-	// ifstream in("input");
-	// KFU::LinearSystem sys(3, 3);
-	KFU::Wave w(10, 3, 215.3);
-	KFU::Waveguide guide(120, 5, 12, 4, 4);
+	double wavenumber = 100;
+	KFU::Wave w(6, 3, 215.3);
+	KFU::Waveguide guide(wavenumber, 6, 14, 4, 3);
 	KFU::WaveguideSystem sys(guide, w);
-	// in >> sys;
-	// cout << sys;
-
-	cout << guide.I_a(4, 2) << endl;
+	cout << sys.solve();
+	cout << guide.gamma(2) * 0.1 << endl;
 	return 0;
 }

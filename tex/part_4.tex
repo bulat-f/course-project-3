@@ -1,4 +1,4 @@
-\section{Переход из БСЛАУ к СЛАУ}
+\chapter{Переход из БСЛАУ к СЛАУ}
 
 Выберем $n$, и (\ref{first_part}), (\ref{second_part}) оставим только $n$ уравнений и сумму тоже ''срежем'' до $n$. Получившуюся СЛАУ обозначим как $Dy = r$. Внутреннюю сумму по $m$ тоже ограничем $M$.
 
@@ -45,9 +45,9 @@ $$
 $$
 
 $$
-	I^a_{n,m} = \int\limits_0^a\sin{\frac{\pi n}{b}t} \cdot \sin{\frac{\pi m}{a}t} \cdot dt = \frac{ab^2m(-1)^{m+1}\ \sin{\frac{n \pi a}{b}}}{(\b^2m^2 - a^2n^2)\pi}
+	I^a_{n,m} = \int\limits_0^a\sin{\frac{\pi n}{b}t} \cdot \sin{\frac{\pi m}{a}t} \cdot dt = \frac{ab^2m(-1)^{m+1}\ \sin{\frac{n \pi a}{b}}}{(b^2m^2 - a^2n^2)\pi}
 $$
 
 $$
-	I^b_{n,m} = \int\limits_a^b\sin{\frac{\pi n}{b}t} \cdot \sin{\frac{\pi m}{b-a}(t-a)} \cdot dt = \frac{\frac{m \pi}{b-a} \sin{\frac{n \pi a}{b}}}{\gamma^2_n - \gamma^2_{am}}
+	I^b_{n,m} = \int\limits_a^b\sin{\frac{\pi n}{b}t} \cdot \sin{\frac{\pi m}{b-a}(t-a)} \cdot dt = \frac{(b-a)b^2m(-1)^{m+1}\ \sin{\frac{n \pi (b-a)}{b}}}{(b^2m^2 - (b-a)^2n^2)\pi}
 $$

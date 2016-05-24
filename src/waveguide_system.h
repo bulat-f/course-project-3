@@ -12,9 +12,11 @@ namespace KFU
 	{
 		public:
 			WaveguideSystem(Waveguide guide, Wave w);
+			void solve_all();
 		private:
 			Waveguide waveguide;
 			Wave wave;
+			Wave* solutions;
 
 			void init_matrix();
 			void init_vector();

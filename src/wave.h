@@ -9,6 +9,7 @@ namespace KFU
 	class Wave: public Vector<Complex>
 	{
 		public:
+      Wave(int n);
 			Wave(int n, int l, Complex al);
 
       int getNumber();
