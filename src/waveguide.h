@@ -9,11 +9,11 @@ namespace KFU
 	class Waveguide
 	{
 		public:
-			Waveguide(double, double, double, double, int);
+			Waveguide(double k, double a, double b, double c, int max);
 
 			Complex S(int i, int j);
 
-			double delta(int i, int j);
+			double delta(int i, int j); // helper
 
 			double I_a(int n, int m);
 			double I_b(int n, int m);
@@ -26,7 +26,7 @@ namespace KFU
 			Complex gamma_b(int m);
 			Complex gamma(int m);
 
-			Complex exp_i(int k);
+			Complex exp_i(int k); // base
 		private:
 			double wavenumber;
 			double height;
@@ -35,9 +35,9 @@ namespace KFU
 
 			int M;
 
-			double gamma2(int n, double h);
+			double gamma2(int n, double h); // base
 
-			double I_base(int n, int m, double a, double b);
+			double I_base(int n, int m, double a, double b); // base
 
 			Complex _exp_i(Complex x);
 	};

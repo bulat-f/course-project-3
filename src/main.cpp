@@ -10,11 +10,11 @@ using namespace std;
 
 int main()
 {
-	double wavenumber = 100;
-	KFU::Wave w(6, 3, 215.3);
-	KFU::Waveguide guide(wavenumber, 6, 14, 4, 3);
+	double wavenumber = 4;
+	KFU::Wave w(3, 1, 500.);
+	KFU::Waveguide guide(wavenumber, 4, 10, 8, 3);
 	KFU::WaveguideSystem sys(guide, w);
-	cout << sys.solve();
-	cout << guide.gamma(2) * 0.1 << endl;
+	sys.solve_all();
+	cout << sys.getSolutions()[0] << sys.getSolutions()[1];
 	return 0;
 }

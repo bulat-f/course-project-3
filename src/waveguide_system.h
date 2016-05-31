@@ -13,6 +13,7 @@ namespace KFU
 		public:
 			WaveguideSystem(Waveguide guide, Wave w);
 			void solve_all();
+			Wave* getSolutions();
 		private:
 			Waveguide waveguide;
 			Wave wave;

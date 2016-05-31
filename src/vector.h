@@ -30,6 +30,7 @@ namespace KFU
 			Vector(int, const type&);
 			Vector(type *, int, Orientation);
 			Vector(const Vector&);
+			Vector(const Vector&, int, int);
 
 			int size() const;
 
@@ -78,6 +79,12 @@ namespace KFU
 
 	template <class type>
 	Vector<type>::Vector(const Vector& other): values(other.values), orient(other.orient)
+	{
+	}
+
+	template <class type>
+	Vector<type>::Vector(const Vector& other, int first, int last)
+	:values(other.values.begin() + first, other.values.begin() + last), orient(other.orient)
 	{
 	}
 
